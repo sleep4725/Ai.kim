@@ -1,18 +1,17 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-class Step:
+
+class SigmoidGraph:
 
     def __init__(self):
-
         ## x좌표
-        self.xCoordinate = np.arange(-5, 5, 0.1)
+        self.xCoordinate = np.arange(-10, 10, 0.1)
 
-    def stepFunc(self):
-        
+    def sigGraph(self):
         ## y좌표
         yCoordinate = list(map(
-            lambda x: np.array(x > 0, dtype=np.int), self.xCoordinate
+            lambda x: 1/(1+np.exp(-x)), self.xCoordinate
         ))
 
         plt.plot(self.xCoordinate, yCoordinate)
@@ -21,9 +20,11 @@ class Step:
 
         plt.show()
 
+
 def main():
-    snode = Step()
-    snode.stepFunc()
+    snode = SigmoidGraph()
+    snode.sigGraph()
+
 
 if __name__ == "__main__":
     main()
