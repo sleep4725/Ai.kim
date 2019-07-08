@@ -16,6 +16,7 @@ class Step:
         ))
 
         plt.plot(self.xCoordinate, yCoordinate)
+        plt.plot([0, 0], [1.0, 0.0], ":")
         plt.xlabel("x-coordinate")
         plt.ylabel("y-coordinate")
 
